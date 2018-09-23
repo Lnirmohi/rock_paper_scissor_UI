@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 /*=====================HEADER============================*/
@@ -25,7 +26,6 @@ header {
 
 #heading-text {
     color: white;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     text-transform: uppercase;
     letter-spacing: 1.1px;
 }
@@ -33,12 +33,38 @@ header {
 /*==========================SECTION======================*/
 
 #container {
-    padding-top: 180px;
+    padding-top: 135px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#result-container {
+    position: relative;
+    margin-bottom: 20px;
+    height: 40px;
     width: 100%;
 }
 
-#game-area {
+#result {
+    background: black;
+    height: 40px;
+    width: 220px;
+    border-radius: 30px;
+    display: block;
+    visibility: visible;
     margin: 0 auto;
+}
+
+#result-text {
+    color: white;
+    text-align: center;
+    font-weight: bold;
+    line-height: 40px;
+}
+
+#game-area {
     width: 440px;
     display: flex;
     flex-direction: row;
@@ -67,14 +93,10 @@ header {
     height: 50px;
 }
 
-#rock:hover {
-    color: gray;
-}
-
 /*==========================*/
 #declaration {
     padding-top: 10px;
-    margin: 40px auto;
+    margin-top: 40px;
     background: #DBDBDB;
     text-align: center;
     border-radius: 30px;
