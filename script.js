@@ -1,4 +1,12 @@
-game();
+const keys = Array.from(document.querySelectorAll('.key'));
+
+keys.forEach( key =>  key.addEventListener('click', playGame));
+
+function playGame(event) {
+    console.log(event.srcElement.id);
+}
+
+//game();
 
 function computerPlay() {
     
@@ -38,8 +46,6 @@ function showAlert(alertMsg) {
 }
 
 function game() {
-    
-    confirm("Start game?");
     
     let score = {
         player: 0,
