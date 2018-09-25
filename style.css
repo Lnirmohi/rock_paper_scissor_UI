@@ -25,12 +25,13 @@ header {
     display: block;
     background: #656565;
     height: 70px;
-    padding: 30px 0 10px 25px;
+    padding: 30px 45px 10px 45px;
 }
 
 .heading {
     display: flex;
     flex-direction: row;
+    height: 30px;
 }
 
 .circle {
@@ -47,13 +48,51 @@ header {
 /*==========================SECTION======================*/
 
 #container {
-    padding-top: 225px;
+    padding-top: 35px;
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
+.score {
+    position: relative;
+    background: none;
+    margin: 0 0 50px 45px;
+    align-self: flex-start;
+}
+
+.score-card {
+    visibility: hidden;
+    height: 140px;
+    width: 160px;
+    border-radius: 5px;
+    background: black;
+    color: black;  
+}
+
+.score-text {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    width: 85px;
+    height: 34px;
+    border: 3px solid black;/* TO-DO make it black */
+    border-radius: 38px;
+    color: black;
+    text-align: center;
+    letter-spacing: 1.1px;
+}
+
+.score-text:hover {
+    border: 3px solid white;
+    background: black;
+    color: white;
+}
+
+.score-text p {
+    line-height: 28px;
+}
 
 #alert-box {
     position: absolute;
@@ -61,14 +100,14 @@ header {
     height: 40px;
     width: 280px;
     border-radius: 30px;
-    visibility: visible;
+    visibility: hidden;
     margin: 0 auto;
     top: 220px;
 }
 
 #alert-text {
     color: white;
-    font-size: 14px;
+    font-size: 16px;
     text-align: center;
     font-weight: bold;
     line-height: 40px;
@@ -81,9 +120,12 @@ header {
     justify-content: space-around;
 }
 
+/* ==========================BUTTONS========================== */
+
 .key {
     border: 2px solid gray;
     border-radius: 50%;
+    background-color: white;
     height: 110px;
     width: 110px;
     transition: 0.4s ease;
@@ -93,7 +135,7 @@ header {
 .key:hover {
     transform: scale(1.2);
     transition: 0.4s ease;
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.27);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.67);
 }
 
 #declaration {

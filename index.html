@@ -9,15 +9,25 @@
 <body>
     <header>
         <div class="heading">
-            <svg class="circle">
-                <circle cx="12" cy="10"  r="8" stroke="white" stroke-width="2" fill="none" />
-            </svg>
+                <svg class="circle">
+                    <circle cx="12" cy="10"  r="8" stroke="white" stroke-width="2" fill="none" />
+                </svg>
             
-            <h3 id="heading-text">rock paper scissor</h3>
+                <h3 id="heading-text">rock paper scissor</h3>
         </div>
     </header>
     
     <section id="container">
+
+        <div class="score">
+            <div class="score-card">
+                
+            </div>
+
+            <div class="score-text">
+                <p>Score</p>
+            </div>
+        </div>
         
         <div id="alert-box">
             <p id="alert-text">
@@ -26,15 +36,12 @@
         </div>
         
         <div id="game-area">
-            <div class="key" id="Rock">
-                <!-- <img src="/images/icon.svg" alt="rock" id="rock-icon"> -->
-            </div>
-            <div class="key" id="Paper">
-                <!-- <img src="/images/text-document.svg" alt="paper" id="paper-icon"> -->
-            </div>
-            <div class="key" id="Scissor">
-                <!-- <img src="/images/scissors.svg" alt="scissor" id="scissor-icon"> -->
-            </div>
+            
+            <button class="key" id="Rock"></button>
+
+            <button class="key" id="Paper"></button>
+
+            <button class="key" id="Scissor"></button>
         </div>
         
         <div id="declaration">
