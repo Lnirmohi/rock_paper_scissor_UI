@@ -47,32 +47,28 @@ header {
 /*==========================SECTION======================*/
 
 #container {
-    padding-top: 135px;
+    padding-top: 225px;
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-#result-container {
-    position: relative;
-    margin-bottom: 20px;
-    height: 40px;
-    width: 100%;
-}
 
-#result {
+#alert-box {
+    position: absolute;
     background: black;
     height: 40px;
-    width: 220px;
+    width: 280px;
     border-radius: 30px;
-    display: block;
-    visibility: hidden;
+    visibility: visible;
     margin: 0 auto;
+    top: 220px;
 }
 
-#result-text {
+#alert-text {
     color: white;
+    font-size: 14px;
     text-align: center;
     font-weight: bold;
     line-height: 40px;
@@ -112,19 +108,19 @@ header {
 
 /*===========ICONS============*/
 
-#rock {
+#Rock {
     background-image: url(/images/icon.svg); 
 }
 
-#paper {
+#Paper {
     background-image: url(/images/text-document.svg); 
 }
 
-#scissor {
+#Scissor {
     background-image: url(/images/scissors.svg); 
 }
 
-#rock, #paper, #scissor {
+#Rock, #Paper, #Scissor {
     background-size: 50px 50px;
     background-repeat: no-repeat;
     background-position: center;
