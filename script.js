@@ -59,16 +59,18 @@ function playRound(playerSelection, computerSelection) {
 
 function updateTable(outcome) {
     
-    if(msgAndResult[1] != "draw"){
+    if(outcome != "draw"){
         
-        msgAndResult[1] === "won" ? score.player++ : score.computer++;
+        outcome === "won" ? score.player++ : score.computer++;
     }
 }
 
 //renders msg on alert div of index
 function renderAlert(msg){
 
-    let alertBox = document.getElementById("alert-text");
+    document.getElementById("alert-box").style.visibility = 'visible';
 
-    alertBox.textContent = msg;
+    let alertText = document.getElementById("alert-text");
+
+    alertText.textContent = msg;
 }
