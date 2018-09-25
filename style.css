@@ -109,15 +109,15 @@ header {
 /*===========ICONS============*/
 
 #Rock {
-    background-image: url(/images/icon.svg); 
+    background-image: url(images/icon.svg); 
 }
 
 #Paper {
-    background-image: url(/images/text-document.svg); 
+    background-image: url(images/text-document.svg); 
 }
 
 #Scissor {
-    background-image: url(/images/scissors.svg); 
+    background-image: url(images/scissors.svg); 
 }
 
 #Rock, #Paper, #Scissor {
