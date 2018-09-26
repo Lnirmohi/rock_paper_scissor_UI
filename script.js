@@ -58,19 +58,31 @@ function playRound(playerSelection, computerSelection) {
 }
 
 function updateTable(outcome) {
-    
+
+    let scores = [document.getElementById("player"), document.getElementById("computer")];
+
     if(outcome != "draw"){
         
-        outcome === "won" ? score.player++ : score.computer++;
+        if(outcome === "won") {
+            scores[0].textContent = ++score.player;
+        }
+        else{
+            scores[1].textContent = ++score.computer;
+        }
     }
 }
 
 //renders msg on alert div of index
 function renderAlert(msg){
 
-    document.getElementById("alert-box").style.visibility = 'visible';
+    let alert = {
+        box  : document.getElementById("alert-box"),
+        text : document.getElementById("alert-text")
+    };
 
-    let alertText = document.getElementById("alert-text");
+    alert.box.style.visibility = 'visible';
 
-    alertText.textContent = msg;
+    alert.text.style.padding = "0 20px";
+
+    alert.text.textContent = msg;
 }
