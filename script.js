@@ -103,13 +103,7 @@ function updateScores(outcome) {
 
     if(score.player == 5 || score.computer == 5) {
         checkForWinner();
-
-        initializeScores(scoreElements);
-
-        setTimeout( () => {
-            document.getElementById("announcement").textContent = "Shoot!";
-            document.getElementById("alert-box").style.visibility = "hidden";
-        },3000);
+        initializeState(scoreElements);
     }
 }
 
@@ -120,10 +114,16 @@ function checkForWinner() {
     score.player == 5 ? announce.textContent = "Player won the game!" : announce.textContent = "Computer won the game!";
 }
 
-function initializeScores(scoreElements) {
+//set scores to 0 and initialize announcement and alert-box values
+function initializeState(scoreElements) {
 
     score.player = score.computer = 0;
-    
-    scoreElements.playerElement.textContent = 0;
-    scoreElements.computerElement.textContent = 0;
+
+    setTimeout( () => {
+        document.getElementById("announcement").textContent = "Shoot!";
+        document.getElementById("alert-box").style.visibility = "hidden";
+
+        scoreElements.playerElement.textContent = 0;
+        scoreElements.computerElement.textContent = 0;
+    },3000);
 }
