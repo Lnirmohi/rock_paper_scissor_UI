@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family: 'Josefin Sans';
     letter-spacing: 1.1px;
 }
 
@@ -18,6 +18,11 @@ a {
 a:hover {
     color: black;
     text-decoration-line: underline;
+}
+
+hr {
+    margin: 6px 0 10px 0;
+    opacity: 0.5;
 }
 
 /*=====================HEADER============================*/
@@ -63,13 +68,9 @@ header {
 }
 
 .score-text {
-    top: 15px;
-    left: 15px;
-    width: 85px;
-    height: 34px;
     color: black;
     
-    font-size: 22px;
+    font-size: 26px;
     color: rgb(104, 104, 104);
 }
 
@@ -80,7 +81,7 @@ header {
     justify-content: space-between;
     width: 150px;
     font-size: 19px;
-    margin-bottom: 4px;
+    margin: 6px 0;
 }
 
 .score p {
@@ -130,8 +131,9 @@ header {
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.67);
 }
 
-#declaration {
-    line-height: 40px;
+#announcement {
+    font-size: 18px;
+    line-height: 43px;
     margin-top: 40px;
     background: #DBDBDB;
     text-align: center;
@@ -146,12 +148,29 @@ header {
     background-image: url(images/icon.svg); 
 }
 
+#Rock:hover {
+    background-image: url(images/icon1.svg); 
+    background-color: black;
+}
+
 #Paper {
     background-image: url(images/text-document.svg); 
 }
 
+#Paper:hover {
+    background-image: url(images/text-document1.svg);
+    background-color: black;
+}
+
+
 #Scissor {
     background-image: url(images/scissors.svg); 
+    
+}
+
+#Scissor:hover {
+    background-image: url(images/scissors1.svg);
+    background-color: black;
 }
 
 #Rock, #Paper, #Scissor {
