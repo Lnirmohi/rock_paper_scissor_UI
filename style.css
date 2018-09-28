@@ -48,6 +48,7 @@ header {
 #heading-text {
     color: white;
     text-transform: uppercase;
+    line-height: 27px;
 }
 
 /*==========================SECTION======================*/
