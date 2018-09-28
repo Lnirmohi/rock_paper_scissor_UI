@@ -56,7 +56,7 @@ function computerPlay() {
     return ['Rock', 'Paper', 'Scissor'][Math.floor(Math.random() * 3)];
 }
 
-//returns an array of message to display and result of single game
+//returns object of message to display and result of single game
 function playRound(playerSelection, computerSelection) {
 
     //predetermined results of game played and what beats what
