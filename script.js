@@ -18,14 +18,36 @@ function playGame(event) {
 }
 
 function game(playerSelection) {
+
+    let divObjects = {
+       
+        alert : {
+            box  : document.getElementById("alert-box"),
+            text : document.getElementById("alert-text")
+        },
+        scoreElements : {
+            playerElement : document.getElementById("player"),
+            computerElement : document.getElementById("computer")
+        },
+        announce : document.getElementById("announcement")
+
+    };
      
     //Object of message to display and result
     let msgAndResult = playRound(playerSelection, computerPlay());
 
     //sending message in function
-    renderAlert(msgAndResult.message);
+    renderAlert(msgAndResult.message, divObjects.alert);
 
-    updateScores(msgAndResult.result);
+    updateScores(msgAndResult.result, divObjects.scoreElements);
+
+    let isGameOver = checkForWinner(divObjects.announce);
+
+    console.log(isGameOver);
+
+    if(isGameOver == true) {
+        initializeState(divObjects);
+    }
 }
 
 //return random selction 
@@ -70,12 +92,7 @@ function playRound(playerSelection, computerSelection) {
 }
 
 //renders msg on alert div of index
-function renderAlert(msg) {
-
-    const alert = {
-        box  : document.getElementById("alert-box"),
-        text : document.getElementById("alert-text")
-    };
+function renderAlert(msg, alert) {
 
     alert.box.style.visibility = 'visible';
 
@@ -84,12 +101,7 @@ function renderAlert(msg) {
     alert.text.textContent = msg;
 }
 
-function updateScores(outcome) {
-
-    const scoreElements = {
-        playerElement : document.getElementById("player"),
-        computerElement : document.getElementById("computer")
-    }
+function updateScores(outcome, scoreElements) {
 
     if(outcome != "draw"){
         
@@ -100,30 +112,30 @@ function updateScores(outcome) {
             scoreElements.computerElement.textContent = ++score.computer;
         }
     }
-
-    if(score.player == 5 || score.computer == 5) {
-        checkForWinner();
-        initializeState(scoreElements);
-    }
 }
 
-function checkForWinner() {
+function checkForWinner(announce) {
 
-    const announce = document.getElementById("announcement");
+    if(score.player == 5 || score.computer == 5) {
+        
+        score.player == 5 ? announce.textContent = "Player won the game!" : announce.textContent = "Computer won the game!";
 
-    score.player == 5 ? announce.textContent = "Player won the game!" : announce.textContent = "Computer won the game!";
+        return true;
+    }
+
+    return false;
 }
 
 //set scores to 0 and initialize announcement and alert-box values
-function initializeState(scoreElements) {
+function initializeState(reset) {
 
     score.player = score.computer = 0;
 
     setTimeout( () => {
-        document.getElementById("announcement").textContent = "Shoot!";
-        document.getElementById("alert-box").style.visibility = "hidden";
+        reset.announce.textContent = "Shoot!";
+        reset.alert.box.style.visibility = "hidden";
 
-        scoreElements.playerElement.textContent = 0;
-        scoreElements.computerElement.textContent = 0;
-    },3000);
+        reset.scoreElements.playerElement.textContent = 0;
+        reset.scoreElements.computerElement.textContent = 0;
+    },  3000);
 }
